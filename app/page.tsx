@@ -1,8 +1,10 @@
 // NOTE(jim)
 // To use file system routing, you must have `page.tsx`.
-import { headers } from 'next/headers';
 
+import { headers } from 'next/headers';
+import PutFile from '@root/pages/putFile';
 import '@root/global.scss';
+import { AppContextProvider } from '@root/context/app';
 
 async function makeExampleRequest({ host }) {
   try {
@@ -14,10 +16,14 @@ async function makeExampleRequest({ host }) {
 }
 
 import DefaultLayout from '@components/DefaultLayout';
+import { AppContext } from '@root/context/app';
 
 export default async function Page(props) {
   const currentHeaders = headers();
   const data = await makeExampleRequest({ host: currentHeaders.get('host') });
-
-  return <DefaultLayout>{data.example}</DefaultLayout>;
+  return <AppContextProvider>//have defaultlayout render the current page dynamically
+    <DefaultLayout>
+      {..pageProps}
+    </DefaultLayout>
+  </AppContextProvider>;
 }

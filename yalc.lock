@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "estuary-js-browser": {
+      "signature": "872976675c00e863cfea5d2d59eddc7f",
+      "file": true
+    }
+  }
+}

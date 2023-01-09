@@ -12,9 +12,14 @@
     "script": "ts-node -O '{\"module\":\"commonjs\"}' scripts/index.js"
   },
   "dependencies": {
+    "axios": "^1.2.1",
+    "estuary-js-browser": "file:.yalc/estuary-js-browser",
+    "multer": "^1.4.5-lts.1",
     "next": "13.0.7",
+    "next-connect": "^0.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
     "sass": "1.56.2"
   },
   "devDependencies": {
